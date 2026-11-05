@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="530 180 870 480" width="870" height="480">
+<title>Opus Meum</title>
+<defs>
+<mask id="c" maskUnits="userSpaceOnUse" x="500" y="150" width="1000" height="600"><rect x="500" y="150" width="1000" height="600" fill="#fff"/><polygon points="876,360 1500,360 1500,900 1416,900" fill="#000"/></mask>
+<clipPath id="t"><rect x="500" y="208" width="1000" height="600"/></clipPath>
+</defs>
+<g fill="none" stroke="#000" stroke-width="86">
+<path mask="url(#c)" d="M 949.7 376.9 A 178 178 0 1 1 902.9 294.1"/>
+<path clip-path="url(#t)" stroke-miterlimit="10" d="M 897.9 289.1 L 1095 486 L 1323 222 L 1323 633"/>
+</g>
+</svg>
