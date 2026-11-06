@@ -1,6 +1,8 @@
 ---
 title: Why Copilot governance comes before Copilot rollout
 summary: Copilot works with the permissions you already have. Here is what to fix before rollout, so it does not surface content nobody meant to share.
+image: /news/images/copilot-governance.svg
+image_alt: Illustration of a magnifying glass over a grid of documents, revealing two that are shared with everyone.
 ---
 Microsoft 365 Copilot is only as safe as the permissions behind it. Copilot does not get new access to your data: it works with what each person can already open in SharePoint, OneDrive, Teams and Exchange. That sounds reassuring until you remember how much content in a typical tenant is shared more widely than anyone intended.
 

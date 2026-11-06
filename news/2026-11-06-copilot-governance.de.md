@@ -1,6 +1,8 @@
 ---
 title: Warum Copilot-Governance vor der Copilot-Einführung kommt
 summary: Copilot nutzt die Berechtigungen, die Sie bereits haben. Was Sie vor der Einführung klären sollten, damit keine Inhalte auftauchen, die niemand teilen wollte.
+image: /news/images/copilot-governance.svg
+image_alt: Illustration: Eine Lupe über einem Raster von Dokumenten zeigt zwei, die mit allen geteilt sind.
 ---
 Microsoft 365 Copilot ist nur so sicher wie die Berechtigungen dahinter. Copilot erhält keinen neuen Zugriff auf Ihre Daten: Er arbeitet mit dem, was jede Person in SharePoint, OneDrive, Teams und Exchange ohnehin öffnen kann. Das klingt beruhigend, bis man bedenkt, wie viele Inhalte in einem typischen Tenant breiter geteilt sind als beabsichtigt.
 

@@ -147,9 +147,16 @@ def load_posts():
         for key in ("title", "summary"):
             if not meta.get(key):
                 fail(f"news/{name}: '{key}:' is required")
+        if meta.get("image"):
+            img = os.path.join(ROOT, meta["image"].lstrip("/"))
+            if not meta["image"].startswith("/news/images/") or not os.path.isfile(img):
+                fail(f"news/{name}: image must be a file in news/images/, got {meta['image']}")
+            if not meta.get("image_alt"):
+                fail(f"news/{name}: 'image_alt:' is required when 'image:' is set")
         posts.append({
             "date": dt.date.fromisoformat(m.group(1)), "slug": m.group(2), "lang": m.group(3),
             "title": meta["title"], "summary": meta["summary"],
+            "image": meta.get("image", ""), "image_alt": meta.get("image_alt", ""),
             "body": markdown(fm.group(2)),
         })
     posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
@@ -218,12 +225,22 @@ def shell(lang, *, title, description, canonical, switch, alternates, og_type, e
 """
 
 
+def og_image(p):
+    """Social previews need a raster image: use a .png next to the cover if there is one."""
+    if not p["image"]:
+        return ""
+    png = os.path.splitext(p["image"])[0] + ".png"
+    return png if os.path.isfile(os.path.join(ROOT, png.lstrip("/"))) else p["image"]
+
+
 def news_list(items, lang, heading="h3"):
     rows = []
     for p in items:
+        thumb = (f'<img src="{html.escape(p["image"])}" alt="" width="1200" height="630" loading="lazy">'
+                 if p["image"] else "")
         rows.append(
             f'<li><a class="news-item" href="{post_url(p)}">'
-            f'<time datetime="{p["date"].isoformat()}">{fmt_date(p["date"], lang)}</time>'
+            f'<span class="news-meta">{thumb}<time datetime="{p["date"].isoformat()}">{fmt_date(p["date"], lang)}</time></span>'
             f'<span class="news-text"><{heading}>{html.escape(p["title"])}</{heading}>'
             f'<span class="news-summary">{html.escape(p["summary"])}</span></span></a></li>')
     return '<ul class="news-list">\n' + "\n".join(rows) + "\n</ul>"
@@ -305,7 +322,13 @@ def build():
                   f'"datePublished":"{p["date"].isoformat()}","inLanguage":"{lang}",'
                   f'"mainEntityOfPage":"{SITE}{url}",'
                   '"author":{"@type":"Organization","name":"Opus Meum","url":"https://opusmeum.net/"},'
+                  + (f'"image":"{SITE}{og_image(p)}",' if p["image"] else "") +
                   '"publisher":{"@type":"Organization","name":"Opus Meum","logo":{"@type":"ImageObject","url":"https://opusmeum.net/logo.svg"}}}</script>')
+            og = (f'  <meta property="og:image" content="{SITE}{og_image(p)}">\n'
+                  f'  <meta property="og:image:alt" content="{html.escape(p["image_alt"])}">\n'
+                  '  <meta name="twitter:card" content="summary_large_image">\n') if p["image"] else ""
+            cover = (f'<figure class="post-cover"><img src="{html.escape(p["image"])}" '
+                     f'alt="{html.escape(p["image_alt"])}" width="1200" height="630"></figure>') if p["image"] else ""
             main = f"""    <article class="post">
       <div class="wrap">
         <p class="post-crumb"><a href="{archive}">{t['news']}</a></p>
@@ -314,6 +337,7 @@ def build():
           <h1>{html.escape(p['title'])}</h1>
           <p class="post-lede">{html.escape(p['summary'])}</p>
         </header>
+        {cover}
         <div class="post-body">
 {p['body']}
         </div>
@@ -326,7 +350,7 @@ def build():
             write(url, shell(lang, title=f"{p['title']} | Opus Meum", description=p["summary"],
                              canonical=url, switch=switch,
                              alternates={c: post_url(tr[c]) for c in LANGS if c in tr},
-                             og_type="article", extra_head=ld, main=main))
+                             og_type="article", extra_head=og + ld, main=main))
             sitemap.append((url, p["date"].isoformat()))
 
         # RSS

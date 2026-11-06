@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f3f4f6"/>
+  <g fill="none" stroke="#000" stroke-width="10" stroke-linecap="round">
+    <!-- links from agent to apps -->
+    <path d="M600 315 L392 165 M600 315 L392 465 M600 315 L808 165 M600 315 L808 465"/>
+    <!-- trigger: clock to agent -->
+    <path d="M228 315 H470" stroke-dasharray="2 26"/>
+    <!-- agent to agent (A2A) -->
+    <path d="M730 315 H930"/>
+  </g>
+  <!-- app tiles -->
+  <g fill="#fff" stroke="#000" stroke-width="10">
+    <rect x="322" y="105" width="140" height="120" rx="22"/>
+    <rect x="322" y="405" width="140" height="120" rx="22"/>
+    <rect x="738" y="105" width="140" height="120" rx="22"/>
+    <rect x="738" y="405" width="140" height="120" rx="22"/>
+  </g>
+  <g fill="#000">
+    <rect x="352" y="140" width="80" height="12" rx="6"/><rect x="352" y="168" width="52" height="12" rx="6"/>
+    <rect x="352" y="440" width="80" height="12" rx="6"/><rect x="352" y="468" width="52" height="12" rx="6"/>
+    <rect x="768" y="140" width="80" height="12" rx="6"/><rect x="768" y="168" width="52" height="12" rx="6"/>
+    <rect x="768" y="440" width="80" height="12" rx="6"/><rect x="768" y="468" width="52" height="12" rx="6"/>
+  </g>
+  <!-- clock (schedule / event trigger) -->
+  <circle cx="172" cy="315" r="62" fill="#fff" stroke="#000" stroke-width="12"/>
+  <path d="M172 315 V275 M172 315 L200 333" stroke="#000" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <!-- main agent with its own account -->
+  <circle cx="600" cy="315" r="122" fill="#000"/>
+  <circle cx="600" cy="290" r="34" fill="#fff"/>
+  <path d="M538 392 C538 352 566 334 600 334 C634 334 662 352 662 392 Z" fill="#fff"/>
+  <!-- second agent -->
+  <circle cx="1000" cy="315" r="72" fill="#fff" stroke="#000" stroke-width="12"/>
+  <circle cx="1000" cy="315" r="26" fill="#000"/>
+</svg>

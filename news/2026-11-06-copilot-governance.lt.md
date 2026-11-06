@@ -1,6 +1,8 @@
 ---
 title: Kodėl Copilot valdysena turi būti pirmiau nei Copilot diegimas
 summary: Copilot naudoja jau esamas prieigos teises. Štai ką verta sutvarkyti prieš diegimą, kad jis neatskleistų turinio, kurio niekas neketino dalintis.
+image: /news/images/copilot-governance.svg
+image_alt: Iliustracija: didinamasis stiklas virš dokumentų tinklelio atskleidžia du, pasidalintus su visais.
 ---
 Microsoft 365 Copilot yra tiek saugus, kiek saugios už jo esančios prieigos teisės. Copilot negauna naujos prieigos prie jūsų duomenų: jis dirba su tuo, ką kiekvienas žmogus jau gali atidaryti SharePoint, OneDrive, Teams ir Exchange. Tai skamba raminančiai, kol neprisimename, kiek turinio įprastoje organizacijoje pasidalinta plačiau, nei kas nors ketino.
 

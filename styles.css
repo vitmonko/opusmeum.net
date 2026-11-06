@@ -135,6 +135,8 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
 .news-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
 .news-list li { border-bottom: 1px solid var(--rule); }
 .news-item { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(12px, 6vw, 80px); padding: 32px 0; text-decoration: none; }
+.news-meta { display: flex; flex-direction: column; gap: 14px; }
+.news-meta img { width: 100%; max-width: 360px; height: auto; display: block; border-radius: 8px; background: var(--mist); }
 .news-item time { color: var(--graphite); font-size: 1rem; font-weight: 500; padding-top: 4px; }
 .news-item h2, .news-item h3 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 10px; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 5px; text-decoration-thickness: 2px; transition: text-decoration-color .15s; }
 .news-item:hover h2, .news-item:hover h3 { text-decoration-color: currentColor; }
@@ -152,6 +154,8 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
 .post-crumb a { color: var(--graphite); font-weight: 500; text-underline-offset: 4px; }
 .post-crumb a:hover { color: var(--ink); }
 .post-head { padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid var(--ink); }
+.post-cover { margin: 0 0 48px; }
+.post-cover img { width: 100%; height: auto; display: block; border-radius: 12px; background: var(--mist); }
 .post-head time { color: var(--graphite); font-weight: 500; }
 .post-head h1 { margin-top: 12px; font-size: clamp(2.2rem, 4.6vw, 3.6rem); line-height: 1.06; font-weight: 600; letter-spacing: -0.03em; }
 .post-lede { margin-top: 20px; font-size: clamp(1.15rem, 1.7vw, 1.35rem); color: var(--graphite); }
@@ -200,7 +204,8 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
   .hero .wrap, .contact .wrap, .section-head, .about-body, .service-list li { grid-template-columns: 1fr; }
   .hero .mark-wrap { order: -1; max-width: 220px; }
   .service-list li { gap: 10px; padding: 26px 0; }
-  .news-item { grid-template-columns: 1fr; gap: 8px; padding: 26px 0; }
+  .news-item { grid-template-columns: 1fr; gap: 14px; padding: 26px 0; }
+  .news-meta img { max-width: none; }
   .post-cta { padding: 24px; }
   .ai-grid, .steps { grid-template-columns: 1fr; }
   .ai-grid { gap: 40px; }

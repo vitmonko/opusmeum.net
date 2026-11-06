@@ -21,6 +21,8 @@ A post can exist in only one language. It then appears only on that language's p
 ---
 title: The headline of the post
 summary: One or two sentences shown in the list and in search results.
+image: /news/images/my-cover.svg
+image_alt: What the cover image shows, for screen readers.
 ---
 First paragraph of the post.
 
@@ -35,7 +37,13 @@ First paragraph of the post.
 Supported formatting: paragraphs, `##` and `###` subheadings, `-` and `1.` lists, `> quotes`,
 `**bold**`, `*italic*` and `[links](url)`.
 
-## Images
+## Cover image (optional)
+
+`image:` is shown at the top of the post and next to it in the news list. Use a 1200 × 630 image in
+`news/images/`. LinkedIn and other sites can't show SVG previews, so if the cover is an `.svg`, put a
+`.png` with the same name next to it and that is used for link previews. `image_alt:` is required with an image.
+
+## Images inside a post
 
 Put images in `news/images/` and add them on a line of their own:
 
