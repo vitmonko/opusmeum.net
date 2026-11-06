@@ -131,7 +131,8 @@ def load_posts():
         return posts
     for name in sorted(os.listdir(folder)):
         m = re.match(r"^(\d{4}-\d{2}-\d{2})-([a-z0-9-]+)\.(en|lt|de)\.md$", name)
-        if not name.endswith(".md") or name in ("README.md", "SOURCES.md"):
+        # Upper-case files (README.md, SOURCES.md, NOTES.md...) are documentation, not posts.
+        if not name.endswith(".md") or re.match(r"^[A-Z][A-Z0-9_-]*\.md$", name):
             continue
         if not m:
             fail(f"news/{name}: name must look like 2026-11-06-my-post.en.md")
