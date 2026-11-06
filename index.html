@@ -8,8 +8,15 @@
   <meta property="og:title" content="Opus Meum | Power Platform and AI consultancy">
   <meta property="og:description" content="Apps, automation and AI, built on the Microsoft 365 you already pay for.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:url" content="https://opusmeum.net/">
   <meta name="theme-color" content="#ffffff">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://opusmeum.net/">
+  <link rel="alternate" hreflang="en" href="https://opusmeum.net/">
+  <link rel="alternate" hreflang="lt" href="https://opusmeum.net/lt/">
+  <link rel="alternate" hreflang="de" href="https://opusmeum.net/de/">
+  <link rel="alternate" hreflang="x-default" href="https://opusmeum.net/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -53,11 +60,14 @@
       border-bottom: 1px solid var(--rule);
     }
     .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; white-space: nowrap; }
     .brand svg { width: 46px; height: auto; display: block; }
     .nav { display: flex; align-items: center; gap: 32px; }
     .nav a { text-decoration: none; font-weight: 500; font-size: 1rem; color: var(--graphite); }
     .nav a:hover { color: var(--ink); }
+    .lang { display: flex; gap: 2px; padding-left: 20px; border-left: 1px solid var(--rule); }
+    .nav .lang a { font-size: .9rem; padding: 4px 6px; border-radius: 4px; }
+    .nav .lang a[aria-current="true"] { color: var(--ink); font-weight: 700; }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
@@ -152,12 +162,21 @@
     .foot-links a { color: var(--graphite); text-decoration: none; font-size: 1rem; }
     .foot-links a:hover { color: var(--ink); }
 
+    @media (max-width: 420px) {
+      .site-header .brand-name { display: none; }
+    }
     @media (max-width: 960px) {
       .ai-grid { grid-template-columns: repeat(2, 1fr); }
       .steps { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
     }
     @media (max-width: 760px) {
-      .nav a:not(.btn) { display: none; }
+      .nav > a:not(.btn) { display: none; }
+      .nav { gap: 10px; }
+      .nav .btn { padding: 9px 16px; }
+      .lang { padding-left: 0; border-left: 0; gap: 0; }
+      .nav .lang a { padding: 4px 5px; }
+      .brand { font-size: 1.05rem; gap: 10px; }
+      .brand svg { width: 40px; }
       .hero .wrap, .contact .wrap, .section-head, .about-body, .service-list li { grid-template-columns: 1fr; }
       .hero .mark-wrap { order: -1; max-width: 220px; }
       .service-list li { gap: 10px; padding: 26px 0; }
@@ -183,7 +202,7 @@
           <path mask="url(#cut-h)" d="M 949.7 376.9 A 178 178 0 1 1 902.9 294.1"/>
           <path clip-path="url(#top-h)" stroke-miterlimit="10" d="M 897.9 289.1 L 1095 486 L 1323 222 L 1323 633"/>
         </svg>
-        Opus Meum
+        <span class="brand-name">Opus Meum</span>
       </a>
       <nav class="nav" aria-label="Main">
         <a href="#services">Services</a>
@@ -191,6 +210,11 @@
         <a href="#approach">Approach</a>
         <a href="#about">About</a>
         <a class="btn btn-solid" href="#contact">Contact</a>
+        <div class="lang" aria-label="Language">
+          <a href="/" hreflang="en" lang="en" aria-current="true" title="English">EN</a>
+          <a href="/lt/" hreflang="lt" lang="lt" title="Lietuvių">LT</a>
+          <a href="/de/" hreflang="de" lang="de" title="Deutsch">DE</a>
+        </div>
       </nav>
     </div>
   </header>

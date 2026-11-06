@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Opus Meum | Power Platform- und KI-Beratung</title>
+  <meta name="description" content="Opus Meum entwickelt Business-Apps, Automatisierungen, Reporting und KI-Agenten auf Basis von Microsoft Power Platform, Microsoft 365 und Azure AI.">
+  <meta property="og:title" content="Opus Meum | Power Platform- und KI-Beratung">
+  <meta property="og:description" content="Apps, Automatisierung und KI für Ihr Microsoft 365.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:url" content="https://opusmeum.net/de/">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://opusmeum.net/de/">
+  <link rel="alternate" hreflang="en" href="https://opusmeum.net/">
+  <link rel="alternate" hreflang="lt" href="https://opusmeum.net/lt/">
+  <link rel="alternate" hreflang="de" href="https://opusmeum.net/de/">
+  <link rel="alternate" hreflang="x-default" href="https://opusmeum.net/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #000000;
+      --paper: #ffffff;
+      --mist: #f3f4f6;
+      --graphite: #4b5158;
+      --rule: #e2e4e8;
+      --night-muted: #a9aeb5;
+      --night-rule: #2b2e33;
+      --stroke: 86;
+      --wrap: 1180px;
+      --gutter: clamp(20px, 5vw, 48px);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Urbanist", system-ui, sans-serif;
+      font-size: 1.125rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, p { margin: 0; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+    .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 16px; top: 16px; background: var(--ink); color: var(--paper); padding: 8px 14px; z-index: 100; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: saturate(160%) blur(10px);
+      -webkit-backdrop-filter: saturate(160%) blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600; font-size: 1.25rem; letter-spacing: -0.01em; white-space: nowrap; }
+    .brand svg { width: 46px; height: auto; display: block; }
+    .nav { display: flex; align-items: center; gap: 32px; }
+    .nav a { text-decoration: none; font-weight: 500; font-size: 1rem; color: var(--graphite); }
+    .nav a:hover { color: var(--ink); }
+    .lang { display: flex; gap: 2px; padding-left: 20px; border-left: 1px solid var(--rule); }
+    .nav .lang a { font-size: .9rem; padding: 4px 6px; border-radius: 4px; }
+    .nav .lang a[aria-current="true"] { color: var(--ink); font-weight: 700; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 26px; border-radius: 999px;
+      font: 600 1rem/1 "Urbanist", system-ui, sans-serif;
+      text-decoration: none; border: 1.5px solid var(--ink);
+      transition: background-color .15s, color .15s;
+    }
+    .btn-solid { background: var(--ink); color: var(--paper); }
+    .btn-solid:hover { background: var(--paper); color: var(--ink); }
+    .btn-line { background: transparent; color: var(--ink); }
+    .btn-line:hover { background: var(--ink); color: var(--paper); }
+    .nav .btn { padding: 10px 20px; color: var(--paper); }
+    .nav .btn:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero { padding: clamp(56px, 10vw, 128px) 0 clamp(64px, 10vw, 120px); }
+    .hero .wrap { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+      line-height: 1.03; font-weight: 600; letter-spacing: -0.035em;
+      max-width: 16ch;
+    }
+    .hero .lede { margin-top: 28px; font-size: clamp(1.125rem, 1.6vw, 1.3rem); color: var(--graphite); max-width: 36em; }
+    .hero .actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .mark { width: 100%; height: auto; display: block; }
+    .mark path { fill: none; stroke: var(--ink); stroke-width: var(--stroke); }
+    .hero .mark path { stroke-dasharray: 1; stroke-dashoffset: 0; }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero .mark .o { stroke-dashoffset: 1; animation: draw 1.1s cubic-bezier(.65,0,.35,1) .15s forwards; }
+      .hero .mark .m { stroke-dashoffset: 1; animation: draw .9s cubic-bezier(.65,0,.35,1) 1.2s forwards; }
+    }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    /* Sections */
+    section { padding: clamp(72px, 10vw, 128px) 0; }
+    .section-head { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(24px, 6vw, 80px); margin-bottom: clamp(40px, 6vw, 72px); align-items: end; }
+    .section-head h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); line-height: 1.08; font-weight: 600; letter-spacing: -0.03em; }
+    .section-head p { color: var(--graphite); max-width: 36em; }
+
+    /* Platform services */
+    .services { background: var(--mist); }
+    .service-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+    .service-list li {
+      display: grid; grid-template-columns: 5fr 7fr; gap: clamp(12px, 6vw, 80px);
+      padding: 32px 0; border-bottom: 1px solid #d4d7dc;
+    }
+    .service-list h3 { font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+    .service-list h3 span { display: block; font-size: 1rem; font-weight: 500; color: var(--graphite); letter-spacing: 0; margin-top: 4px; }
+    .service-list p { color: #2c3035; max-width: 38em; }
+
+    /* AI */
+    .ai { background: var(--ink); color: var(--paper); }
+    .ai .section-head p { color: var(--night-muted); }
+    .ai-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px clamp(24px, 4vw, 48px); }
+    .ai-item { border-top: 1px solid var(--night-rule); padding-top: 24px; }
+    .ai-item h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; margin-bottom: 12px; }
+    .ai-item p { color: var(--night-muted); font-size: 1.05rem; }
+    .ai-note { margin-top: clamp(48px, 6vw, 72px); padding-top: 28px; border-top: 1px solid var(--night-rule); color: var(--paper); font-size: 1.2rem; max-width: 46em; }
+
+    /* Approach */
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(24px, 3vw, 40px); counter-reset: step; }
+    .steps li { counter-increment: step; border-top: 1px solid var(--ink); padding-top: 20px; }
+    .steps li::before { content: counter(step); display: block; font-size: 3rem; font-weight: 300; line-height: 1; margin-bottom: 20px; letter-spacing: -0.04em; }
+    .steps h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .steps p { color: var(--graphite); font-size: 1.05rem; }
+
+    /* About */
+    .about { border-top: 1px solid var(--rule); }
+    .about-body { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(24px, 6vw, 80px); }
+    .about-body h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); line-height: 1.08; font-weight: 600; letter-spacing: -0.03em; }
+    .about-body .name { margin-top: 16px; color: var(--graphite); }
+    .about-body .text p + p { margin-top: 1em; }
+    .about-body .text p { max-width: 38em; }
+    .stack { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
+    .stack li { border: 1px solid var(--rule); border-radius: 999px; padding: 6px 14px; font-size: .95rem; font-weight: 500; color: #2c3035; }
+
+    /* Contact */
+    .contact { background: var(--mist); }
+    .contact .wrap { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+    .contact h2 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.03; font-weight: 600; letter-spacing: -0.035em; max-width: 14ch; }
+    .contact p { margin-top: 20px; color: var(--graphite); max-width: 32em; }
+    .contact-card { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+    .email { font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 600; letter-spacing: -0.02em; text-decoration-thickness: 2px; text-underline-offset: 6px; word-break: break-all; }
+
+    /* Footer */
+    .site-footer { padding: 40px 0 48px; }
+    .site-footer .top { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .site-footer .brand svg { width: 38px; }
+    .site-footer small { display: block; margin-top: 28px; color: var(--graphite); font-size: .85rem; line-height: 1.5; max-width: 60em; }
+    .foot-links { display: flex; gap: 24px; }
+    .foot-links a { color: var(--graphite); text-decoration: none; font-size: 1rem; }
+    .foot-links a:hover { color: var(--ink); }
+
+    @media (max-width: 420px) {
+      .site-header .brand-name { display: none; }
+    }
+    @media (max-width: 960px) {
+      .ai-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
+    }
+    @media (max-width: 760px) {
+      .nav > a:not(.btn) { display: none; }
+      .nav { gap: 10px; }
+      .nav .btn { padding: 9px 16px; }
+      .lang { padding-left: 0; border-left: 0; gap: 0; }
+      .nav .lang a { padding: 4px 5px; }
+      .brand { font-size: 1.05rem; gap: 10px; }
+      .brand svg { width: 40px; }
+      .hero .wrap, .contact .wrap, .section-head, .about-body, .service-list li { grid-template-columns: 1fr; }
+      .hero .mark-wrap { order: -1; max-width: 220px; }
+      .service-list li { gap: 10px; padding: 26px 0; }
+      .ai-grid, .steps { grid-template-columns: 1fr; }
+      .ai-grid { gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Opus Meum Startseite">
+        <svg class="mark" viewBox="530 180 870 480" aria-hidden="true">
+          <defs>
+            <mask id="cut-h" maskUnits="userSpaceOnUse" x="500" y="150" width="1000" height="600">
+              <rect x="500" y="150" width="1000" height="600" fill="#fff"/>
+              <polygon points="876,360 1500,360 1500,900 1416,900" fill="#000"/>
+            </mask>
+            <clipPath id="top-h"><rect x="500" y="208" width="1000" height="600"/></clipPath>
+          </defs>
+          <path mask="url(#cut-h)" d="M 949.7 376.9 A 178 178 0 1 1 902.9 294.1"/>
+          <path clip-path="url(#top-h)" stroke-miterlimit="10" d="M 897.9 289.1 L 1095 486 L 1323 222 L 1323 633"/>
+        </svg>
+        <span class="brand-name">Opus Meum</span>
+      </a>
+      <nav class="nav" aria-label="Hauptmenü">
+        <a href="#services">Leistungen</a>
+        <a href="#ai">KI</a>
+        <a href="#approach">Vorgehen</a>
+        <a href="#about">Über uns</a>
+        <a class="btn btn-solid" href="#contact">Kontakt</a>
+        <div class="lang" aria-label="Sprache">
+          <a href="/" hreflang="en" lang="en" title="English">EN</a>
+          <a href="/lt/" hreflang="lt" lang="lt" title="Lietuvių">LT</a>
+          <a href="/de/" hreflang="de" lang="de" aria-current="true" title="Deutsch">DE</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div>
+          <h1>Apps, Automatisierung und KI für Ihr Microsoft&nbsp;365.</h1>
+          <p class="lede">Opus Meum ist ein Beratungsunternehmen für Microsoft Power Platform. Wir machen aus Tabellen, E-Mail-Ketten und manuellen Arbeitsschritten funktionierende Apps, Flows, Berichte und KI-Agenten, gemeinsam mit Ihrem Team entwickelt und so übergeben, dass Sie sie selbst betreiben können.</p>
+          <div class="actions">
+            <a class="btn btn-solid" href="#contact">Kostenloses Erstgespräch buchen</a>
+            <a class="btn btn-line" href="#services">Leistungen ansehen</a>
+          </div>
+        </div>
+        <div class="mark-wrap">
+          <svg class="mark" viewBox="530 180 870 480" role="img" aria-label="Opus Meum logo">
+            <defs>
+              <mask id="cut-x" maskUnits="userSpaceOnUse" x="500" y="150" width="1000" height="600">
+                <rect x="500" y="150" width="1000" height="600" fill="#fff"/>
+                <polygon points="876,360 1500,360 1500,900 1416,900" fill="#000"/>
+              </mask>
+              <clipPath id="top-x"><rect x="500" y="208" width="1000" height="600"/></clipPath>
+            </defs>
+            <path class="o" pathLength="1" mask="url(#cut-x)" d="M 949.7 376.9 A 178 178 0 1 1 902.9 294.1"/>
+            <path class="m" pathLength="1" clip-path="url(#top-x)" stroke-miterlimit="10" d="M 897.9 289.1 L 1095 486 L 1323 222 L 1323 633"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Was wir entwickeln</h2>
+          <p>Die meisten Unternehmen haben die folgenden Werkzeuge bereits über Microsoft 365 lizenziert. Wir helfen Ihnen, sie richtig einzusetzen: eine Plattform, ein Berechtigungskonzept und nichts, was Ihre IT nicht betreuen kann.</p>
+        </div>
+        <ul class="service-list">
+          <li>
+            <h3>Power Apps<span>Geschäftsanwendungen</span></h3>
+            <p>Apps, die Tabellen und Papierformulare ersetzen: Prüfungen, Freigaben, Anlagenverwaltung, Onboarding, Außendienst. Canvas- und modellgesteuerte Apps auf Dataverse oder SharePoint, für Desktop und Mobilgeräte.</p>
+          </li>
+          <li>
+            <h3>Power Automate<span>Workflow-Automatisierung</span></h3>
+            <p>Flows, die Daten zwischen Outlook, Teams, SharePoint und Ihren Fachanwendungen bewegen, dazu Desktop-Automatisierung für ältere Programme ohne API.</p>
+          </li>
+          <li>
+            <h3>Power BI<span>Reporting und Analyse</span></h3>
+            <p>Datenmodelle und Berichte, die tatsächlich genutzt werden. Wir binden Ihre Datenquellen an, definieren jede Kennzahl einmal und richten geplante Aktualisierung und Sicherheit auf Zeilenebene ein.</p>
+          </li>
+          <li>
+            <h3>SharePoint<span>Intranet und Dokumente</span></h3>
+            <p>Intranets, Dokumentbibliotheken und Metadaten, mit denen Dateien leicht zu finden sind, und Berechtigungen, die zur tatsächlichen Arbeitsweise Ihres Unternehmens passen.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="ai" id="ai">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>KI, die in Ihren Prozessen arbeitet</h2>
+          <p>Wir setzen KI dort ein, wo sie echte Arbeit abnimmt, mit dem KI-Angebot von Microsoft. So bleiben Ihre Daten in Ihrem Tenant, unter den Sicherheits- und Compliance-Regeln, die Sie bereits haben.</p>
+        </div>
+        <div class="ai-grid">
+          <div class="ai-item">
+            <h3>Copilot-Studio-Agenten</h3>
+            <p>Agenten für Mitarbeitende oder Kunden, die aus Ihrem SharePoint, Ihren Richtlinien und Wissensdatenbanken antworten und Aktionen ausführen: ein Ticket anlegen, eine Freigabe starten, einen Datensatz aktualisieren.</p>
+          </div>
+          <div class="ai-item">
+            <h3>Dokumentenverarbeitung</h3>
+            <p>Rechnungen, Verträge, Belege und Formulare mit AI Builder und Azure AI Document Intelligence auslesen und die Daten über einen Flow mit menschlicher Prüfung weiterleiten.</p>
+          </div>
+          <div class="ai-item">
+            <h3>Lösungen mit Azure OpenAI</h3>
+            <p>Zusammenfassen, Klassifizieren, Entwerfen und Durchsuchen Ihrer eigenen Inhalte, gebaut auf Azure OpenAI mit Zugriff auf Ihre Daten statt auf das öffentliche Internet.</p>
+          </div>
+          <div class="ai-item">
+            <h3>Einführung von Microsoft 365 Copilot</h3>
+            <p>Echten Nutzen aus Copilot-Lizenzen ziehen: Readiness-Check für Berechtigungen und Daten, Use-Case-Workshops mit jedem Team, praxisnahe Prompt-Leitfäden und Nutzungsauswertung.</p>
+          </div>
+          <div class="ai-item">
+            <h3>KI in Apps und Berichten</h3>
+            <p>Copilot in Power Apps, Fragen in natürlicher Sprache zu Power-BI-Berichten und KI-Prompts in Flows, die E-Mails sortieren, Anfragen verschlagworten und Ausnahmen markieren.</p>
+          </div>
+          <div class="ai-item">
+            <h3>Governance und Sicherheit</h3>
+            <p>Umgebungsstrategie, Richtlinien zur Verhinderung von Datenverlust, Vertraulichkeitsbezeichnungen und Nutzungsrichtlinien, damit KI nur auf Daten zugreift, die die jeweilige Person sehen darf.</p>
+          </div>
+        </div>
+        <p class="ai-note">Unsicher, wo KI passt? Beginnen Sie mit einem Prozess, der zu lange dauert. Im kostenlosen Gespräch sagen wir Ihnen ehrlich, ob KI hilft oder ob ein einfacher Flow genügt.</p>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>So läuft ein Projekt ab</h2>
+          <p>Kleine Schritte, sichtbarer Fortschritt und früh eine funktionierende Version, damit Sie auf etwas Echtes reagieren statt auf ein Pflichtenheft.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Analyse</h3>
+            <p>Ein kostenloses Erstgespräch, dann ein kurzer Workshop, in dem wir den Prozess, die Beteiligten und die Datenquellen erfassen.</p>
+          </li>
+          <li>
+            <h3>Prototyp</h3>
+            <p>Eine klickbare erste Version zum Ausprobieren, damit Umfang und Prioritäten vor der eigentlichen Umsetzung feststehen.</p>
+          </li>
+          <li>
+            <h3>Umsetzung</h3>
+            <p>Lieferung in kurzen Zyklen, getestet mit den künftigen Nutzern, Lizenzierung und Sicherheit laufend geprüft.</p>
+          </li>
+          <li>
+            <h3>Übergabe</h3>
+            <p>Dokumentation, Schulungen und Admin-Leitfäden. Weitere Betreuung, wenn Sie möchten, volle Unabhängigkeit, wenn nicht.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-body">
+        <div>
+          <h2>Über Opus Meum</h2>
+          <p class="name">Lateinisch für &bdquo;mein Werk&ldquo;.</p>
+        </div>
+        <div class="text">
+          <p>Wir sind ein Beratungsunternehmen mit Fokus auf ein Ökosystem: Microsoft Power Platform, Microsoft 365 und Azure AI. Deshalb wissen wir, wo die Grenzen der Plattform liegen, was jede Option an Lizenzen kostet und wann ein anderes Werkzeug die bessere Wahl ist.</p>
+          <p>Wir verbinden Business-Analyse mit praktischer Entwicklung: Wer Ihren Prozess versteht, baut auch die Lösung. Ob erste App oder unternehmensweite Plattform, das Ziel ist dasselbe: etwas, das Ihr Team jeden Tag nutzt und ohne uns pflegen kann.</p>
+          <ul class="stack" aria-label="Technologien, mit denen wir arbeiten">
+            <li>Power Apps</li><li>Power Automate</li><li>Power BI</li><li>SharePoint</li><li>Dataverse</li><li>Copilot Studio</li><li>AI Builder</li><li>Azure OpenAI</li><li>Microsoft Teams</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div>
+          <h2>Erzählen Sie uns, was Ihr Team ausbremst.</h2>
+          <p>Beschreiben Sie den Prozess in ein paar Sätzen. Wir antworten mit einigen Rückfragen oder einem Termin für ein kostenloses 30-minütiges Gespräch.</p>
+        </div>
+        <div class="contact-card">
+          <a class="email" href="mailto:vitalijus@opusmeum.net?subject=Anfrage%20Erstgespr%C3%A4ch">vitalijus@opusmeum.net</a>
+          <a class="btn btn-solid" href="mailto:vitalijus@opusmeum.net?subject=Anfrage%20Erstgespr%C3%A4ch">Kostenloses Erstgespräch buchen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="top">
+        <a class="brand" href="#top" aria-label="Opus Meum Startseite">
+          <svg class="mark" viewBox="530 180 870 480" aria-hidden="true">
+            <defs>
+              <mask id="cut-f" maskUnits="userSpaceOnUse" x="500" y="150" width="1000" height="600">
+                <rect x="500" y="150" width="1000" height="600" fill="#fff"/>
+                <polygon points="876,360 1500,360 1500,900 1416,900" fill="#000"/>
+              </mask>
+              <clipPath id="top-f"><rect x="500" y="208" width="1000" height="600"/></clipPath>
+            </defs>
+            <path mask="url(#cut-f)" d="M 949.7 376.9 A 178 178 0 1 1 902.9 294.1"/>
+            <path clip-path="url(#top-f)" stroke-miterlimit="10" d="M 897.9 289.1 L 1095 486 L 1323 222 L 1323 633"/>
+          </svg>
+          Opus Meum
+        </a>
+        <nav class="foot-links" aria-label="Fußzeile">
+          <a href="#services">Leistungen</a>
+          <a href="#ai">KI</a>
+          <a href="#contact">Kontakt</a>
+        </nav>
+      </div>
+      <small>&copy; <span id="year">2026</span> Opus Meum. Alle Rechte vorbehalten. Microsoft, Microsoft 365, Power Platform, Power Apps, Power Automate, Power BI, SharePoint, Copilot und Azure sind Marken der Microsoft-Unternehmensgruppe.</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
