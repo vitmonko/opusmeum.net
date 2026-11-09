@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f3f4f6"/>
+  <!-- lanes -->
+  <g fill="none" stroke="#dfe2e6" stroke-width="70" stroke-linecap="round">
+    <path d="M90 175 H1110 M90 335 H700 M90 475 H700"/>
+  </g>
+  <!-- barrier -->
+  <rect x="650" y="272" width="30" height="266" rx="15" fill="#000"/>
+  <!-- bubble builder: rounded rect with tail -->
+  <!-- free-flowing lane (licensed) -->
+  <g fill="#000">
+    <rect x="200" y="140" width="110" height="70" rx="24"/><path d="M222 205 L214 236 L250 208 Z"/>
+    <rect x="520" y="140" width="110" height="70" rx="24"/><path d="M542 205 L534 236 L570 208 Z"/>
+    <rect x="840" y="140" width="110" height="70" rx="24"/><path d="M862 205 L854 236 L890 208 Z"/>
+  </g>
+  <path d="M990 145 L1040 175 L990 205" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- waiting lanes -->
+  <g fill="#fff" stroke="#000" stroke-width="10" stroke-linejoin="round">
+    <rect x="300" y="300" width="110" height="70" rx="24"/>
+    <rect x="460" y="300" width="110" height="70" rx="24"/>
+    <rect x="300" y="440" width="110" height="70" rx="24"/>
+    <rect x="460" y="440" width="110" height="70" rx="24"/>
+  </g>
+  <g fill="#000">
+    <circle cx="335" cy="335" r="8"/><circle cx="355" cy="335" r="8"/><circle cx="375" cy="335" r="8"/>
+    <circle cx="495" cy="335" r="8"/><circle cx="515" cy="335" r="8"/><circle cx="535" cy="335" r="8"/>
+    <circle cx="335" cy="475" r="8"/><circle cx="355" cy="475" r="8"/><circle cx="375" cy="475" r="8"/>
+    <circle cx="495" cy="475" r="8"/><circle cx="515" cy="475" r="8"/><circle cx="535" cy="475" r="8"/>
+  </g>
+  <!-- later: clock beyond the gate -->
+  <circle cx="900" cy="405" r="80" fill="#fff" stroke="#000" stroke-width="12"/>
+  <path d="M900 405 V355 M900 405 L935 428" stroke="#000" stroke-width="12" stroke-linecap="round" fill="none"/>
+</svg>
