@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#000"/>
+  <!-- business app table -->
+  <rect x="90" y="150" width="340" height="330" rx="26" fill="none" stroke="#fff" stroke-width="14"/>
+  <rect x="90" y="150" width="340" height="70" rx="26" fill="#fff"/>
+  <rect x="90" y="190" width="340" height="30" fill="#fff"/>
+  <g fill="#3a3d42">
+    <rect x="125" y="255" width="270" height="34" rx="10"/>
+    <rect x="125" y="320" width="270" height="34" rx="10"/>
+    <rect x="125" y="385" width="270" height="34" rx="10"/>
+  </g>
+  <rect x="125" y="320" width="270" height="34" rx="10" fill="#dfe2e6"/>
+  <!-- link from table row to chat -->
+  <path d="M430 337 L520 337" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-dasharray="2 24"/>
+  <!-- chat bubble with confirm tick -->
+  <path d="M560 190 h240 a40 40 0 0 1 40 40 v150 a40 40 0 0 1 -40 40 h-150 l-60 55 v-55 h-30 a40 40 0 0 1 -40 -40 v-150 a40 40 0 0 1 40 -40 z" fill="#fff"/>
+  <path d="M620 310 l45 45 l90 -95" fill="none" stroke="#000" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- monitoring bell with signal -->
+  <g fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M940 400 v-90 a70 70 0 0 1 140 0 v90 l25 30 h-190 z"/>
+    <path d="M985 455 a25 25 0 0 0 50 0"/>
+  </g>
+  <g fill="none" stroke="#6b7078" stroke-width="10" stroke-linecap="round">
+    <path d="M1100 215 a60 60 0 0 1 30 45"/>
+    <path d="M920 215 a60 60 0 0 0 -30 45"/>
+  </g>
+</svg>
