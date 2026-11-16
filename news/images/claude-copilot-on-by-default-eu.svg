@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f3f4f6"/>
+  <!-- calendar page -->
+  <rect x="110" y="150" width="330" height="330" rx="28" fill="#fff" stroke="#000" stroke-width="12"/>
+  <path d="M110 230 H440" stroke="#000" stroke-width="12"/>
+  <path d="M190 120 V180 M360 120 V180" stroke="#000" stroke-width="14" stroke-linecap="round"/>
+  <g fill="#dfe2e6">
+    <rect x="150" y="262" width="52" height="46" rx="10"/><rect x="221" y="262" width="52" height="46" rx="10"/><rect x="292" y="262" width="52" height="46" rx="10"/><rect x="363" y="262" width="52" height="46" rx="10"/>
+    <rect x="150" y="330" width="52" height="46" rx="10"/><rect x="292" y="330" width="52" height="46" rx="10"/><rect x="363" y="330" width="52" height="46" rx="10"/>
+    <rect x="150" y="398" width="52" height="46" rx="10"/><rect x="221" y="398" width="52" height="46" rx="10"/><rect x="292" y="398" width="52" height="46" rx="10"/>
+  </g>
+  <rect x="221" y="330" width="52" height="46" rx="10" fill="#000"/>
+  <!-- dotted arrow -->
+  <path d="M480 315 H600" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-dasharray="2 28"/>
+  <path d="M592 280 L642 315 L592 350" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- boundary circle with toggle -->
+  <circle cx="870" cy="315" r="220" fill="#dfe2e6"/>
+  <circle cx="870" cy="315" r="220" fill="none" stroke="#000" stroke-width="14"/>
+  <rect x="730" y="245" width="280" height="140" rx="70" fill="#000"/>
+  <circle cx="940" cy="315" r="52" fill="#fff"/>
+</svg>
