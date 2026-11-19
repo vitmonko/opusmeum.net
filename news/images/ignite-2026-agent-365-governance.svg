@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#000"/>
+  <!-- spokes -->
+  <g stroke="#ffffff" stroke-opacity=".45" stroke-width="10" stroke-linecap="round">
+    <path d="M600 315 L250 130 M600 315 L210 330 M600 315 L280 510 M600 315 L950 130 M600 315 L995 320 M600 315 L920 510 M600 315 L600 85 M600 315 L600 555"/>
+  </g>
+  <!-- agents from different platforms -->
+  <g fill="#fff">
+    <circle cx="250" cy="130" r="40"/>
+    <rect x="170" y="290" width="80" height="80" rx="12"/>
+    <path d="M280 460 L330 545 L230 545 Z"/>
+    <rect x="910" y="90" width="80" height="80" rx="12"/>
+    <circle cx="995" cy="320" r="44"/>
+    <path d="M920 460 L970 545 L870 545 Z"/>
+  </g>
+  <g fill="#6b7078">
+    <circle cx="600" cy="70" r="28"/>
+    <rect x="574" y="540" width="52" height="52" rx="10"/>
+  </g>
+  <!-- central registry panel -->
+  <rect x="460" y="185" width="280" height="260" rx="40" fill="#fff"/>
+  <path d="M600 230 L680 260 V320 C680 365 645 392 600 408 C555 392 520 365 520 320 V260 Z" fill="none" stroke="#000" stroke-width="14" stroke-linejoin="round"/>
+  <circle cx="600" cy="318" r="20" fill="#000"/>
+</svg>

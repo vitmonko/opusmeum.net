@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f3f4f6"/>
+  <!-- app window -->
+  <rect x="90" y="110" width="640" height="410" rx="30" fill="#fff" stroke="#000" stroke-width="12"/>
+  <path d="M230 110 V520" stroke="#000" stroke-width="12"/>
+  <g fill="#dfe2e6">
+    <rect x="128" y="160" width="64" height="18" rx="9"/>
+    <rect x="128" y="200" width="64" height="18" rx="9"/>
+    <rect x="128" y="240" width="64" height="18" rx="9"/>
+  </g>
+  <!-- document tile -->
+  <rect x="270" y="170" width="130" height="170" rx="16" fill="#fff" stroke="#000" stroke-width="10"/>
+  <g fill="#000"><rect x="292" y="200" width="86" height="12" rx="6"/><rect x="292" y="228" width="86" height="12" rx="6"/><rect x="292" y="256" width="56" height="12" rx="6"/></g>
+  <!-- spreadsheet tile -->
+  <rect x="425" y="170" width="130" height="170" rx="16" fill="#fff" stroke="#000" stroke-width="10"/>
+  <path d="M425 225 H555 M425 282 H555 M490 170 V340" stroke="#000" stroke-width="8"/>
+  <rect x="495" y="230" width="55" height="47" fill="#000"/>
+  <!-- slide tile -->
+  <rect x="580" y="170" width="120" height="170" rx="16" fill="#fff" stroke="#000" stroke-width="10"/>
+  <rect x="600" y="200" width="80" height="60" rx="8" fill="#dfe2e6"/>
+  <circle cx="640" cy="300" r="16" fill="#000"/>
+  <!-- input bar -->
+  <rect x="270" y="380" width="430" height="80" rx="40" fill="#dfe2e6"/>
+  <circle cx="660" cy="420" r="22" fill="#000"/>
+  <!-- always-on loop -->
+  <circle cx="955" cy="315" r="150" fill="none" stroke="#000" stroke-width="14" stroke-dasharray="4 34" stroke-linecap="round"/>
+  <circle cx="955" cy="315" r="72" fill="#dfe2e6"/>
+  <circle cx="955" cy="315" r="72" fill="none" stroke="#000" stroke-width="12"/>
+  <circle cx="1061" cy="209" r="34" fill="#000"/>
+</svg>
