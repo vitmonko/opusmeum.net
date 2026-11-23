@@ -86,11 +86,28 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
 .section-head p { color: var(--graphite); max-width: 36em; }
 
 /* Clients */
-.clients { padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--rule); }
-.clients .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(16px, 6vw, 80px); align-items: baseline; }
+.clients { padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--rule); overflow: hidden; }
+.clients .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(16px, 6vw, 80px); align-items: center; }
 .clients h2 { font-size: 1rem; font-weight: 600; color: var(--graphite); letter-spacing: 0; }
-.client-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px clamp(28px, 3.4vw, 48px); }
-.client-list li { font-size: clamp(1.35rem, 2.3vw, 1.85rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); }
+.marquee {
+  display: flex; min-width: 0; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.client-track { list-style: none; margin: 0; padding: 0; display: flex; flex: none; align-items: center; gap: clamp(40px, 5vw, 72px); padding-right: clamp(40px, 5vw, 72px); }
+.client-track li { flex: none; display: flex; align-items: center; height: 48px; }
+.client-name { font-size: clamp(1.35rem, 2.1vw, 1.75rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1; color: var(--ink); white-space: nowrap; }
+.client-track img { display: block; height: 32px; width: auto; max-width: 170px; object-fit: contain; filter: grayscale(1); }
+@media (prefers-reduced-motion: no-preference) {
+  .client-track { animation: marquee 36s linear infinite; }
+  .marquee:hover .client-track, .marquee:focus-within .client-track { animation-play-state: paused; }
+}
+@keyframes marquee { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee { display: block; -webkit-mask-image: none; mask-image: none; }
+  .client-track { flex-wrap: wrap; row-gap: 8px; padding-right: 0; }
+  .client-track li[aria-hidden="true"], .client-track-dup { display: none; }
+}
 
 /* Platform services */
 .services { background: var(--mist); }
