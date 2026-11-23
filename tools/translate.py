@@ -136,6 +136,7 @@ T = [
   'Pastabos iš mūsų projektų apie Power Platform, Copilot ir DI valdyseną.',
   'Erfahrungen aus unseren Projekten zu Power Platform, Copilot und KI-Governance.'),
  ('href="/news/">All news</a>', 'href="/lt/news/">Visos naujienos</a>', 'href="/de/news/">Alle Beiträge</a>'),
+ ('<h2 id="clients-title">Selected clients</h2>', '<h2 id="clients-title">Mūsų klientai</h2>', '<h2 id="clients-title">Ausgewählte Kunden</h2>'),
 ]
 missing = [e for e,_,_ in T if e not in src]
 if missing:

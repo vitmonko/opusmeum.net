@@ -85,6 +85,13 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
 .section-head h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); line-height: 1.08; font-weight: 600; letter-spacing: -0.03em; }
 .section-head p { color: var(--graphite); max-width: 36em; }
 
+/* Clients */
+.clients { padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--rule); }
+.clients .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(16px, 6vw, 80px); align-items: baseline; }
+.clients h2 { font-size: 1rem; font-weight: 600; color: var(--graphite); letter-spacing: 0; }
+.client-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 14px clamp(28px, 3.4vw, 48px); }
+.client-list li { font-size: clamp(1.35rem, 2.3vw, 1.85rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; color: var(--ink); }
+
 /* Platform services */
 .services { background: var(--mist); }
 .service-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
@@ -201,7 +208,7 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
   .nav .lang a { padding: 4px 5px; }
   .brand { font-size: 1.05rem; gap: 10px; }
   .brand svg { width: 40px; }
-  .hero .wrap, .contact .wrap, .section-head, .about-body, .service-list li { grid-template-columns: 1fr; }
+  .hero .wrap, .contact .wrap, .section-head, .about-body, .service-list li, .clients .wrap { grid-template-columns: 1fr; }
   .hero .mark-wrap { order: -1; max-width: 220px; }
   .service-list li { gap: 10px; padding: 26px 0; }
   .news-item { grid-template-columns: 1fr; gap: 14px; padding: 26px 0; }
