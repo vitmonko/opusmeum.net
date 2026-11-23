@@ -40,7 +40,6 @@ T = [
  ('Opus Meum is a Microsoft Power Platform consultancy. We turn spreadsheets, email chains and manual steps into working apps, flows, reports and AI agents, built with your team and handed over so you can run them.',
   'Opus Meum – Microsoft Power Platform konsultacijų įmonė. Skaičiuokles, el. laiškų grandines ir rankinius veiksmus paverčiame veikiančiomis programėlėmis, srautais, ataskaitomis ir DI agentais. Kuriame kartu su jūsų komanda ir perduodame taip, kad sprendimus galėtumėte valdyti patys.',
   'Opus Meum ist ein Beratungsunternehmen für Microsoft Power Platform. Wir machen aus Tabellen, E-Mail-Ketten und manuellen Arbeitsschritten funktionierende Apps, Flows, Berichte und KI-Agenten, gemeinsam mit Ihrem Team entwickelt und so übergeben, dass Sie sie selbst betreiben können.'),
- ('Book a free consultation', 'Užsakyti nemokamą konsultaciją', 'Kostenloses Erstgespräch buchen'),
  ('See what we build', 'Peržiūrėti paslaugas', 'Leistungen ansehen'),
  ('<h2>What we build</h2>', '<h2>Ką kuriame</h2>', '<h2>Was wir entwickeln</h2>'),
  ("Most organizations already license the tools below through Microsoft 365. We help you use them properly: one platform, one set of permissions, and nothing your IT team can't support.",
@@ -137,6 +136,10 @@ T = [
   'Erfahrungen aus unseren Projekten zu Power Platform, Copilot und KI-Governance.'),
  ('href="/news/">All news</a>', 'href="/lt/news/">Visos naujienos</a>', 'href="/de/news/">Alle Beiträge</a>'),
  ('<h2 id="clients-title">Selected clients</h2>', '<h2 id="clients-title">Mūsų klientai</h2>', '<h2 id="clients-title">Ausgewählte Kunden</h2>'),
+ ('<span class="email-label">Write to us</span>', '<span class="email-label">Parašykite mums</span>', '<span class="email-label">Schreiben Sie uns</span>'),
+ ('Opens a new email in your email app', 'Atidaro naują laišką jūsų el. pašto programoje', 'Öffnet eine neue E-Mail in Ihrem E-Mail-Programm'),
+ ('data-done="Email address copied"', 'data-done="El. pašto adresas nukopijuotas"', 'data-done="E-Mail-Adresse kopiert"'),
+ ('>Copy email address</button>', '>Kopijuoti el. pašto adresą</button>', '>E-Mail-Adresse kopieren</button>'),
 ]
 missing = [e for e,_,_ in T if e not in src]
 if missing:

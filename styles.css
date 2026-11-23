@@ -151,8 +151,23 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
 .contact .wrap { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
 .contact h2 { font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.03; font-weight: 600; letter-spacing: -0.035em; max-width: 14ch; }
 .contact p { margin-top: 20px; color: var(--graphite); max-width: 32em; }
-.contact-card { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
-.email { font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 600; letter-spacing: -0.02em; text-decoration-thickness: 2px; text-underline-offset: 6px; word-break: break-all; }
+.contact-card { display: flex; flex-direction: column; gap: 16px; }
+.email-card {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: clamp(24px, 3vw, 36px); border-radius: 16px;
+  background: var(--ink); color: var(--paper); text-decoration: none;
+  transition: background-color .15s, transform .15s;
+}
+.email-card:hover { background: #24272c; }
+.email-card:active { transform: scale(.99); }
+.email-card:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.email-icon { width: 32px; height: 32px; margin-bottom: 20px; }
+.email-label { color: var(--night-muted); font-weight: 500; font-size: 1rem; }
+.email-address { font-size: clamp(1.3rem, 2.1vw, 1.7rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; overflow-wrap: anywhere; }
+.email-hint { margin-top: 10px; color: var(--night-muted); font-size: .95rem; }
+.contact-extra { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.copy-email { cursor: pointer; }
+.copy-email[hidden] { display: none; }
 
 /* News */
 .news { border-top: 1px solid var(--rule); }

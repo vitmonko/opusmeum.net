@@ -17,6 +17,7 @@ import re
 import shutil
 import sys
 from email.utils import format_datetime
+from urllib.parse import quote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "_site")
@@ -30,15 +31,15 @@ L10N = {
     "en": {"news": "News", "all": "All news", "feed": "Opus Meum news",
            "archive_intro": "Notes from our projects on Power Platform, Copilot and AI governance.",
            "cta_title": "Want to talk about this for your organization?",
-           "cta": "Book a free consultation", "locale": "en_GB"},
+           "cta": "Email us", "locale": "en_GB"},
     "lt": {"news": "Naujienos", "all": "Visos naujienos", "feed": "Opus Meum naujienos",
            "archive_intro": "Pastabos iš mūsų projektų apie Power Platform, Copilot ir DI valdyseną.",
            "cta_title": "Norite aptarti, kaip tai pritaikyti jūsų organizacijoje?",
-           "cta": "Užsakyti nemokamą konsultaciją", "locale": "lt_LT"},
+           "cta": "Parašykite mums", "locale": "lt_LT"},
     "de": {"news": "Aktuelles", "all": "Alle Beiträge", "feed": "Opus Meum Aktuelles",
            "archive_intro": "Erfahrungen aus unseren Projekten zu Power Platform, Copilot und KI-Governance.",
            "cta_title": "Möchten Sie darüber für Ihr Unternehmen sprechen?",
-           "cta": "Kostenloses Erstgespräch buchen", "locale": "de_DE"},
+           "cta": "Schreiben Sie uns", "locale": "de_DE"},
 }
 MONTHS = {
     "en": ["January", "February", "March", "April", "May", "June", "July",
@@ -344,7 +345,7 @@ def build():
         </div>
         <aside class="post-cta">
           <p>{t['cta_title']}</p>
-          <a class="btn btn-solid" href="{BASE[lang]}#contact">{t['cta']}</a>
+          <a class="btn btn-solid" href="mailto:vitalijus@opusmeum.net?subject={quote(p['title'])}">{t['cta']}</a>
         </aside>
       </div>
     </article>"""
