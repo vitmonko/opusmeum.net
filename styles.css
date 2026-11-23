@@ -88,7 +88,7 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
 /* Clients */
 .clients { padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--rule); overflow: hidden; }
 .clients .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(16px, 6vw, 80px); align-items: center; }
-.clients h2 { font-size: 1rem; font-weight: 600; color: var(--graphite); letter-spacing: 0; }
+.clients h2 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); font-weight: 700; color: var(--ink); letter-spacing: -0.015em; }
 .marquee {
   display: flex; min-width: 0; overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
