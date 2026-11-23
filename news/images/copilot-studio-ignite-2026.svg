@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f3f4f6"/>
+  <!-- flow panel -->
+  <rect x="80" y="110" width="600" height="410" rx="30" fill="#fff" stroke="#000" stroke-width="12"/>
+  <rect x="130" y="180" width="150" height="100" rx="18" fill="#000"/>
+  <rect x="400" y="180" width="230" height="100" rx="18" fill="#fff" stroke="#000" stroke-width="10"/>
+  <rect x="430" y="212" width="120" height="14" rx="7" fill="#dfe2e6"/>
+  <rect x="430" y="240" width="80" height="14" rx="7" fill="#dfe2e6"/>
+  <rect x="265" y="380" width="230" height="90" rx="18" fill="#000"/>
+  <path d="M280 230 H400" stroke="#000" stroke-width="10"/>
+  <path d="M515 280 V330 H380 V380" fill="none" stroke="#000" stroke-width="10" stroke-linejoin="round"/>
+  <!-- gear -->
+  <g transform="translate(900 245)">
+    <g fill="#000">
+      <rect x="-26" y="-175" width="52" height="60" rx="8"/>
+      <rect x="-26" y="-175" width="52" height="60" rx="8" transform="rotate(45)"/>
+      <rect x="-26" y="-175" width="52" height="60" rx="8" transform="rotate(90)"/>
+      <rect x="-26" y="-175" width="52" height="60" rx="8" transform="rotate(135)"/>
+      <rect x="-26" y="-175" width="52" height="60" rx="8" transform="rotate(180)"/>
+      <rect x="-26" y="-175" width="52" height="60" rx="8" transform="rotate(225)"/>
+      <rect x="-26" y="-175" width="52" height="60" rx="8" transform="rotate(270)"/>
+      <rect x="-26" y="-175" width="52" height="60" rx="8" transform="rotate(315)"/>
+    </g>
+    <circle r="130" fill="#dfe2e6" stroke="#000" stroke-width="14"/>
+    <circle r="44" fill="#fff" stroke="#000" stroke-width="12"/>
+  </g>
+  <!-- speech bubble -->
+  <path d="M680 470 H790" stroke="#000" stroke-width="10" stroke-dasharray="14 14" stroke-linecap="round"/>
+  <path d="M790 445 h150 a28 28 0 0 1 28 28 v40 a28 28 0 0 1 -28 28 h-100 l-34 30 v-30 h-16 a28 28 0 0 1 -28 -28 v-40 a28 28 0 0 1 28 -28 z" fill="#fff" stroke="#000" stroke-width="10" stroke-linejoin="round" transform="translate(30 8)"/>
+  <circle cx="860" cy="501" r="9" fill="#000"/><circle cx="895" cy="501" r="9" fill="#000"/><circle cx="930" cy="501" r="9" fill="#000"/>
+</svg>
