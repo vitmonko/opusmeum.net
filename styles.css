@@ -210,6 +210,46 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
 .post-cta { margin-top: 64px; padding: 32px; background: var(--mist); border-radius: 12px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
 .post-cta p { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; max-width: 24em; }
 
+/* Copilot readiness promo */
+.promo {
+  position: fixed; right: 24px; bottom: 24px; z-index: 60;
+  width: min(400px, calc(100vw - 32px));
+  display: grid; grid-template-columns: 56px 1fr; gap: 18px;
+  padding: 24px 24px 24px 22px; border-radius: 18px;
+  background: var(--ink); color: var(--paper);
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, .55);
+  opacity: 0; visibility: hidden; transform: translateY(18px);
+  transition: opacity .35s ease, transform .45s cubic-bezier(.2, .8, .2, 1), visibility 0s linear .45s;
+}
+.promo.is-open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.promo-mark { width: 56px; height: 56px; }
+.promo-text { padding-right: 18px; }
+.promo-title { font-size: 1.2rem; font-weight: 600; line-height: 1.25; letter-spacing: -0.015em; }
+.promo-body { margin-top: 8px; color: var(--night-muted); font-size: .98rem; line-height: 1.5; }
+.promo-cta {
+  display: inline-flex; margin-top: 18px; padding: 11px 20px; border-radius: 999px;
+  background: var(--paper); color: var(--ink); border: 1.5px solid var(--paper);
+  font-weight: 600; font-size: .95rem; line-height: 1; text-decoration: none;
+  transition: background-color .15s, color .15s;
+}
+.promo-cta:hover { background: var(--ink); color: var(--paper); }
+.promo-cta:focus-visible, .promo-close:focus-visible { outline: 2px solid var(--paper); outline-offset: 3px; }
+.promo-close {
+  position: absolute; top: 12px; right: 12px; width: 32px; height: 32px;
+  display: grid; place-items: center; border: 0; border-radius: 50%;
+  background: transparent; color: var(--night-muted); cursor: pointer;
+  transition: background-color .15s, color .15s;
+}
+.promo-close:hover { background: #2b2e33; color: var(--paper); }
+@media (max-width: 520px) {
+  .promo { right: 16px; left: 16px; bottom: 16px; width: auto; grid-template-columns: 44px 1fr; gap: 14px; padding: 20px; }
+  .promo-mark { width: 44px; height: 44px; }
+  .promo-title { font-size: 1.08rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .promo, .promo.is-open { transition: none; transform: none; }
+}
+
 /* Footer */
 .site-footer { padding: 40px 0 48px; }
 .site-footer .top { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
