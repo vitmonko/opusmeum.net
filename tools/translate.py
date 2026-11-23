@@ -141,6 +141,9 @@ T = [
  ('<span class="email-label">Write to us</span>', '<span class="email-label">Parašykite mums</span>', '<span class="email-label">Schreiben Sie uns</span>'),
  ('data-done="Email address copied"', 'data-done="El. pašto adresas nukopijuotas"', 'data-done="E-Mail-Adresse kopiert"'),
  ('>Copy email address</button>', '>Kopijuoti el. pašto adresą</button>', '>E-Mail-Adresse kopieren</button>'),
+ ('<a class="btn btn-line" href="https://vitmonko.github.io/opusmeum.ai/copilot-readiness/">Check your Copilot readiness</a>',
+  '<a class="btn btn-line" href="https://vitmonko.github.io/opusmeum.ai/lt/copilot-readiness/">Patikrinkite pasirengimą Copilot</a>',
+  '<a class="btn btn-line" href="https://vitmonko.github.io/opusmeum.ai/de/copilot-readiness/">Copilot-Bereitschaft prüfen</a>'),
 ]
 missing = [e for e,_,_ in T if e not in src]
 if missing:
