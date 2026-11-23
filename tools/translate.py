@@ -139,7 +139,6 @@ T = [
   '<h2 id="clients-title">Patirtis su</h2>',
   '<h2 id="clients-title">Erfahrung mit</h2>'),
  ('<span class="email-label">Write to us</span>', '<span class="email-label">Parašykite mums</span>', '<span class="email-label">Schreiben Sie uns</span>'),
- ('Opens a new email in your email app', 'Atidaro naują laišką jūsų el. pašto programoje', 'Öffnet eine neue E-Mail in Ihrem E-Mail-Programm'),
  ('data-done="Email address copied"', 'data-done="El. pašto adresas nukopijuotas"', 'data-done="E-Mail-Adresse kopiert"'),
  ('>Copy email address</button>', '>Kopijuoti el. pašto adresą</button>', '>E-Mail-Adresse kopieren</button>'),
 ]
