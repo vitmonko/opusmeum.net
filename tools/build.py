@@ -367,6 +367,23 @@ def build():
               f"<description>{e(t['archive_intro'])}</description><language>{lang}</language>"
               f"{rss_items}</channel></rss>\n")
 
+    # Cache busting: GitHub Pages lets browsers cache CSS/JS for ~10 minutes, so a new
+    # page could load with an old stylesheet. Stamp each link with a content hash.
+    import hashlib
+    stamps = {}
+    for asset in ("styles.css", "main.js"):
+        with open(os.path.join(OUT, asset), "rb") as f:
+            stamps[asset] = hashlib.sha256(f.read()).hexdigest()[:10]
+    for folder, _, files in os.walk(OUT):
+        for name in files:
+            if not name.endswith(".html"):
+                continue
+            path = os.path.join(folder, name)
+            page = open(path, encoding="utf-8").read()
+            page = page.replace('href="/styles.css"', f'href="/styles.css?v={stamps["styles.css"]}"')
+            page = page.replace('src="/main.js"', f'src="/main.js?v={stamps["main.js"]}"')
+            open(path, "w", encoding="utf-8").write(page)
+
     write("/sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
           + "".join(f"  <url><loc>{SITE}{u}</loc><lastmod>{d}</lastmod></url>\n" for u, d in sitemap)
