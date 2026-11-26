@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f3f4f6"/>
+  <!-- left window: unmanaged developer environment -->
+  <rect x="90" y="150" width="400" height="320" rx="28" fill="#fff" stroke="#000" stroke-width="12"/>
+  <path d="M90 225 H490" stroke="#000" stroke-width="12"/>
+  <circle cx="135" cy="188" r="11" fill="#000"/>
+  <circle cx="172" cy="188" r="11" fill="#dfe2e6"/>
+  <circle cx="209" cy="188" r="11" fill="#dfe2e6"/>
+  <!-- code chevrons -->
+  <path d="M230 290 L180 345 L230 400" fill="none" stroke="#000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M350 290 L400 345 L350 400" fill="none" stroke="#000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M305 280 L275 410" stroke="#dfe2e6" stroke-width="14" stroke-linecap="round"/>
+  <!-- pause badge -->
+  <circle cx="480" cy="460" r="66" fill="#000"/>
+  <rect x="454" y="428" width="16" height="64" rx="6" fill="#fff"/>
+  <rect x="490" y="428" width="16" height="64" rx="6" fill="#fff"/>
+  <!-- dotted arrow -->
+  <path d="M590 315 H760" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-dasharray="2 26"/>
+  <path d="M745 280 L790 315 L745 350" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- right window: managed environment -->
+  <rect x="830" y="150" width="290" height="320" rx="28" fill="#000"/>
+  <path d="M975 215 L1055 245 V320 C1055 370 1020 400 975 420 C930 400 895 370 895 320 V245 Z" fill="#fff" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M940 318 L966 345 L1012 290" fill="none" stroke="#000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
