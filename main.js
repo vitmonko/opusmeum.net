@@ -90,3 +90,21 @@ if (copyButton) {
   closeButton.addEventListener('click', () => hide(14));
   cta.addEventListener('click', () => remember(60));
 })();
+
+// Locations: local time in each office, refreshed every 30 seconds.
+(() => {
+  const cells = document.querySelectorAll('.loc-time[data-tz]');
+  if (!cells.length || !window.Intl) return;
+  const lang = document.documentElement.lang || 'en';
+  const render = () => cells.forEach((el) => {
+    try {
+      const time = new Intl.DateTimeFormat(lang, { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: el.dataset.tz }).format(new Date());
+      el.textContent = el.dataset.label;
+      const b = document.createElement('b');
+      b.textContent = time;
+      el.appendChild(b);
+    } catch (e) { /* unknown time zone: leave empty */ }
+  });
+  render();
+  setInterval(render, 30000);
+})();

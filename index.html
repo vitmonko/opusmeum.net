@@ -295,6 +295,42 @@
         </div>
       </div>
     </section>
+    <section class="locations" id="locations" aria-labelledby="locations-title">
+      <div class="wrap">
+        <div class="loc-text">
+          <h2 id="locations-title">Where we work</h2>
+          <p>Based in Vilnius and Barcelona, working with clients on site and remotely.</p>
+          <ul class="loc-list">
+            <li class="loc">
+              <span class="loc-city">Vilnius</span>
+              <span class="loc-country">Lithuania</span>
+              <span class="loc-time" data-tz="Europe/Vilnius" data-label="Local time"></span>
+            </li>
+            <li class="loc">
+              <span class="loc-city">Barcelona</span>
+              <span class="loc-country">Spain</span>
+              <span class="loc-time" data-tz="Europe/Madrid" data-label="Local time"></span>
+            </li>
+          </ul>
+        </div>
+        <figure class="loc-map">
+          <svg viewBox="0 0 600 528" role="img" aria-label="Map of Europe with Vilnius and Barcelona marked">
+            <image href="/images/europe-dots.svg" width="600" height="528"/>
+            <path class="loc-route" d="M182.3 390.8 Q 250 170 490.4 125.8"/>
+            <g class="loc-pin">
+              <circle class="loc-pulse" cx="490.4" cy="125.8" r="9"/>
+              <circle class="loc-dot" cx="490.4" cy="125.8" r="9"/>
+              <text class="loc-label" x="474.4" y="105.8" text-anchor="end">Vilnius</text>
+            </g>
+            <g class="loc-pin">
+              <circle class="loc-pulse loc-pulse-late" cx="182.3" cy="390.8" r="9"/>
+              <circle class="loc-dot" cx="182.3" cy="390.8" r="9"/>
+              <text class="loc-label" x="202.3" y="396.8">Barcelona</text>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">

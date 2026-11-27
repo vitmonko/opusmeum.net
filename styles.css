@@ -261,6 +261,36 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
   .promo, .promo.is-open { transition: none; transform: none; }
 }
 
+/* Locations */
+.locations .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+.loc-text h2 { font-size: clamp(2rem, 3.8vw, 3.1rem); line-height: 1.08; font-weight: 600; letter-spacing: -0.03em; }
+.loc-text > p { margin-top: 16px; color: var(--graphite); max-width: 28em; }
+.loc-list { list-style: none; margin: 40px 0 0; padding: 0; border-top: 1px solid var(--ink); }
+.loc { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "city time" "country time"; align-items: center; column-gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--rule); }
+.loc-city { grid-area: city; font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
+.loc-country { grid-area: country; color: var(--graphite); font-size: 1rem; margin-top: 2px; }
+.loc-time { grid-area: time; text-align: right; color: var(--graphite); font-size: .95rem; font-variant-numeric: tabular-nums; }
+.loc-time b { display: block; color: var(--ink); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; }
+.loc-map {
+  margin: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent);
+  mask-composite: intersect;
+}
+.loc-map svg { display: block; width: 100%; height: auto; overflow: visible; }
+.loc-route { fill: none; stroke: var(--ink); stroke-width: 2; stroke-dasharray: 2 9; stroke-linecap: round; opacity: .55; }
+.loc-dot { fill: var(--ink); stroke: var(--paper); stroke-width: 4; }
+.loc-pulse { fill: var(--ink); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.loc-label { font-family: "Urbanist", system-ui, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 7px; stroke-linejoin: round; }
+@media (prefers-reduced-motion: no-preference) {
+  .loc-pulse { animation: loc-pulse 2.6s ease-out infinite; }
+  .loc-pulse-late { animation-delay: 1.3s; }
+  .loc-route { animation: loc-route 1.6s linear infinite; }
+}
+@keyframes loc-pulse { 0% { transform: scale(1); opacity: .35; } 100% { transform: scale(3.4); opacity: 0; } }
+@keyframes loc-route { to { stroke-dashoffset: -11; } }
+
 /* Footer */
 .site-footer { padding: 40px 0 48px; }
 .site-footer .top { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
@@ -302,6 +332,7 @@ section { padding: clamp(72px, 10vw, 128px) 0; }
   .news-meta img { max-width: none; }
   .post-cta { padding: 24px; }
   .ai-grid, .steps, .project, .project-facts { grid-template-columns: 1fr; }
+  .locations .wrap { grid-template-columns: 1fr; }
   .project-actions .btn { width: 100%; text-align: center; }
   .ai-grid { gap: 40px; }
 }

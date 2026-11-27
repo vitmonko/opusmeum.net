@@ -159,6 +159,17 @@ T = [
  ('<li>Your data stays in your tenant</li>', '<li>Jūsų duomenys lieka jūsų aplinkoje</li>', '<li>Ihre Daten bleiben in Ihrem Tenant</li>'),
  ('>Read about the Governance Monitor</a>', '>Daugiau apie Governance Monitor (anglų k.)</a>', '>Mehr zum Governance Monitor (auf Englisch)</a>'),
  ('>Request pilot access</a>', '>Prašyti bandomosios prieigos</a>', '>Pilotzugang anfragen</a>'),
+ ('<h2 id="locations-title">Where we work</h2>', '<h2 id="locations-title">Kur dirbame</h2>', '<h2 id="locations-title">Wo wir arbeiten</h2>'),
+ ('Based in Vilnius and Barcelona, working with clients on site and remotely.',
+  'Esame Vilniuje ir Barselonoje, su klientais dirbame vietoje ir nuotoliu.',
+  'Wir sind in Vilnius und Barcelona und arbeiten mit Kunden vor Ort und remote.'),
+ ('<span class="loc-city">Barcelona</span>', '<span class="loc-city">Barselona</span>', '<span class="loc-city">Barcelona</span>'),
+ ('text-anchor="end">Vilnius</text>', 'text-anchor="end">Vilnius</text>', 'text-anchor="end">Vilnius</text>'),
+ ('>Barcelona</text>', '>Barselona</text>', '>Barcelona</text>'),
+ ('<span class="loc-country">Lithuania</span>', '<span class="loc-country">Lietuva</span>', '<span class="loc-country">Litauen</span>'),
+ ('<span class="loc-country">Spain</span>', '<span class="loc-country">Ispanija</span>', '<span class="loc-country">Spanien</span>'),
+ ('data-label="Local time"', 'data-label="Vietos laikas"', 'data-label="Ortszeit"'),
+ ('aria-label="Map of Europe with Vilnius and Barcelona marked"', 'aria-label="Europos žemėlapis su pažymėtais Vilniumi ir Barselona"', 'aria-label="Europakarte mit Vilnius und Barcelona"'),
 ]
 missing = [e for e,_,_ in T if e not in src]
 if missing:
