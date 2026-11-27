@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Governance Monitor for SharePoint, Power Apps and agents | Opus Meum</title>
+<meta name="description" content="A governance monitor for SharePoint, Power Apps, Power Automate and Copilot agents that runs on standard Microsoft 365 licences, with more controls for tenants that have premium licences.">
+<meta property="og:title" content="Governance Monitor for SharePoint, Power Apps and agents | Opus Meum">
+<meta property="og:description" content="Finds ownerless, inactive and overshared sites, apps, flows and agents. Runs on standard Microsoft 365 licences. In development, pilot tenants wanted.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://opusmeum.net/projects/governance-monitor/">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://opusmeum.net/projects/governance-monitor/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/projects/assets/check.css">
+<link rel="stylesheet" href="/projects/assets/product.css">
+<link rel="stylesheet" href="/projects/governance-monitor/gm.css">
+<script src="/projects/governance-monitor/page.js" defer></script>
+</head>
+<body class="product">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><svg viewBox="530 180 870 480" aria-hidden="true" focusable="false"><defs><mask id="c" maskUnits="userSpaceOnUse" x="500" y="150" width="1000" height="600"><rect x="500" y="150" width="1000" height="600" fill="#fff"/><polygon points="876,360 1500,360 1500,900 1416,900" fill="#000"/></mask><clipPath id="t"><rect x="500" y="208" width="1000" height="600"/></clipPath></defs><path mask="url(#c)" d="M 949.7 376.9 A 178 178 0 1 1 902.9 294.1"/><path clip-path="url(#t)" stroke-miterlimit="10" d="M 897.9 289.1 L 1095 486 L 1323 222 L 1323 633"/></svg><span>Opus Meum</span></a>
+    <nav class="pnav" aria-label="Page">
+      <a href="#checks">Checks</a>
+      <a href="#reports">Reports</a>
+      <a href="#power-platform">Power Platform</a>
+      <a href="#premium">Premium</a>
+      <a class="btn btn-solid btn-sm" href="mailto:vitalijus@opusmeum.net?subject=Governance%20Monitor%20pilot">Request pilot access</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero: the product's own UI as live HTML -->
+  <section class="sec hero" data-enter>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="status"><span class="dot" aria-hidden="true"></span>In development, pilot tenants wanted</p>
+        <h1>Governance monitor for SharePoint, Power Apps and agents</h1>
+        <p class="lede">Finds ownerless, inactive and overshared sites, apps, flows and agents every night, asks owners what they still need, and runs on the Microsoft 365 licences you already have.</p>
+        <p class="fact">No premium licences needed. Premium licences add more controls.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="mailto:vitalijus@opusmeum.net?subject=Governance%20Monitor%20pilot">Request pilot access</a>
+          <a class="btn btn-line" href="https://vitmonko.github.io/opusmeum.ai/sharepoint-governance/">Take the SharePoint check</a>
+        </div>
+      </div>
+
+      <div class="app-frame" role="img" aria-label="Governance Monitor dashboard with a tenant health score of 64, four finding counts and a list of open findings">
+        <div class="app-bar"><i></i><i></i><i></i><span>Governance Monitor</span></div>
+        <div class="app-body">
+          <aside class="app-side" aria-hidden="true">
+            <b class="on">Overview</b><b>Sites</b><b>Findings</b><b>Reviews</b><b>Policies</b>
+          </aside>
+          <div class="app-main" aria-hidden="true">
+            <div class="score-row">
+              <div>
+                <span class="k">Tenant health</span>
+                <span class="score"><span data-count="64">64</span><small>/100</small></span>
+              </div>
+              <div class="spark"><span class="gm-s1"></span><span class="gm-s2"></span><span class="gm-s3"></span><span class="gm-s4"></span><span class="gm-s5"></span><span class="gm-s6"></span></div>
+            </div>
+            <div class="tiles">
+              <div><span class="k">No owner</span><b>23</b></div>
+              <div><span class="k">Inactive 180 days</span><b>41</b></div>
+              <div><span class="k">Open to everyone</span><b>9</b></div>
+              <div><span class="k">Guests on site</span><b>112</b></div>
+            </div>
+            <div class="rows">
+              <div class="row head"><span>Site</span><span>Finding</span><span>Severity</span></div>
+              <div class="row"><span>Finance Contracts</span><span>Everyone except external users</span><span class="sev crit">Critical</span></div>
+              <div class="row"><span>Project Atlas</span><span>Owner account disabled</span><span class="sev high">High</span></div>
+              <div class="row"><span>HR Onboarding 2023</span><span>No activity for 412 days</span><span class="sev med">Medium</span></div>
+              <div class="row"><span>Sales EMEA</span><span>14 Anyone links</span><span class="sev high">High</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checks -->
+  <section class="sec" id="checks">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>17 checks in six areas</h2>
+        <p>Each check has a threshold and a severity you set. Every site gets a health score from 0 to 100, so you can see the trend month by month.</p>
+      </div>
+      <ul class="cards">
+        <li class="card"><span class="n">3 checks</span><h3>Finds sites without owners</h3><p>One owner or none, and owners whose accounts are disabled.</p></li>
+        <li class="card"><span class="n">2 checks</span><h3>Flags inactive sites</h3><p>Sites and teams with no activity for 90, 180 or 365 days.</p></li>
+        <li class="card"><span class="n">3 checks</span><h3>Lists external sharing</h3><p>Guests, Anyone links and sites shared wider than your policy.</p></li>
+        <li class="card"><span class="n">3 checks</span><h3>Shows overshared sites</h3><p>Sites open to Everyone except external users, found before Copilot surfaces them.</p></li>
+        <li class="card"><span class="n">3 checks</span><h3>Ranks storage use</h3><p>Sites near quota, libraries over 5,000 items and high version limits.</p></li>
+        <li class="card"><span class="n">3 checks</span><h3>Checks site hygiene</h3><p>Naming rules, missing sensitivity labels and sites without a description.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- How it runs: diagram -->
+  <section class="sec" id="how">
+    <div class="wrap split">
+      <div>
+        <h2>Built on standard Microsoft 365 parts</h2>
+        <p class="sub">Scheduled Power Automate flows read the SharePoint admin site with standard connectors. Results go to SharePoint lists, and a SharePoint web part in React shows them.</p>
+        <ul class="ticks">
+          <li>No Power Apps or Power Automate premium licences</li>
+          <li>No third-party cloud service</li>
+          <li>An Azure function is optional, for tenants with thousands of sites</li>
+        </ul>
+      </div>
+      <div class="diagram" aria-label="Diagram: SharePoint admin site and Microsoft Graph feed Power Automate flows, which write to SharePoint lists; the dashboard reads the lists and Teams sends owner reviews" role="img">
+        <svg viewBox="0 0 520 420" aria-hidden="true" focusable="false">
+          <g class="lines">
+            <path id="l1" d="M150 82 C 170 82, 165 182, 185 182"/>
+            <path id="l2" d="M150 302 C 170 302, 165 200, 185 200"/>
+            <path id="l3" d="M260 214 L 260 300"/>
+            <path id="l4" d="M335 320 C 352 320, 352 92, 370 92"/>
+            <path id="l5" d="M335 190 C 352 190, 352 312, 370 312"/>
+          </g>
+          <g class="pulses">
+            <circle r="4"><animateMotion dur="2.8s" repeatCount="indefinite"><mpath href="#l1"/></animateMotion></circle>
+            <circle r="4"><animateMotion dur="2.8s" begin=".7s" repeatCount="indefinite"><mpath href="#l2"/></animateMotion></circle>
+            <circle r="4"><animateMotion dur="1.4s" begin=".3s" repeatCount="indefinite"><mpath href="#l3"/></animateMotion></circle>
+            <circle r="4"><animateMotion dur="2.8s" begin="1.1s" repeatCount="indefinite"><mpath href="#l4"/></animateMotion></circle>
+            <circle r="4"><animateMotion dur="2.8s" begin="1.6s" repeatCount="indefinite"><mpath href="#l5"/></animateMotion></circle>
+          </g>
+        </svg>
+        <div class="gm-s7 node"><b>SharePoint admin site</b><span>All sites, storage, activity</span></div>
+        <div class="gm-s8 node"><b>Microsoft 365 groups</b><span>Owners, members, guests</span></div>
+        <div class="gm-s9 node main"><b>Power Automate</b><span>Nightly scan, standard connectors</span></div>
+        <div class="gm-s10 node"><b>SharePoint lists</b><span>Sites, findings, reviews, log</span></div>
+        <div class="gm-s11 node"><b>Dashboard</b><span>React web part</span></div>
+        <div class="gm-s12 node"><b>Teams and Outlook</b><span>Owner reviews, alerts</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Owner reviews: looping Teams card -->
+  <section class="sec" id="owners">
+    <div class="wrap split">
+      <div>
+        <h2>Site owners confirm what stays</h2>
+        <p class="sub">Every quarter, each owner gets a Teams card for the sites they own: keep, archive or fix sharing. If nobody answers within 14 days, it goes to their manager.</p>
+        <p class="sub">From the dashboard, admins can set a site to read-only, add a backup owner or remove broad access. Every action is logged.</p>
+      </div>
+      <div class="review" id="review">
+        <div class="tcard">
+          <div class="tcard-top"><span class="tlogo" aria-hidden="true">GM</span><span><b>Governance Monitor</b><small>Quarterly site review</small></span></div>
+          <p class="tq">Is <b>HR Onboarding 2023</b> still needed?</p>
+          <ul class="tfacts">
+            <li><span>Last activity</span><b>412 days ago</b></li>
+            <li><span>Storage</span><b>3.8 GB</b></li>
+            <li><span>Guests</span><b>2</b></li>
+          </ul>
+          <div class="tbtns">
+            <span class="tb" data-step="keep">Keep</span>
+            <span class="tb" data-step="archive">Archive</span>
+            <span class="tb" data-step="fix">Fix sharing</span>
+          </div>
+          <p class="tdone" aria-live="off">Archived. The site is read-only and IT has been told.</p>
+        </div>
+        <button class="btn btn-text pause" type="button" aria-pressed="false" id="pause">Pause animation</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Changes, deadlines, exceptions, owners -->
+  <section class="sec" id="changes">
+    <div class="wrap split">
+      <div>
+        <h2>Changes, deadlines and exceptions</h2>
+        <p class="sub">Every scan is compared with the last one, and every finding gets an owner and a due date.</p>
+        <ul class="mini">
+          <li><h3>Shows permission changes</h3><p>New guests, groups and broad grants on each site since the last scan.</p></li>
+          <li><h3>Tracks fix deadlines</h3><p>Due dates by severity, with reminders to the owner and then their manager.</p></li>
+          <li><h3>Expires risk exceptions</h3><p>Each exception has an approver and an end date. Then the finding reopens.</p></li>
+          <li><h3>Splits business and technical owners</h3><p>Business owners confirm a site is needed. Technical owners fix its settings.</p></li>
+        </ul>
+      </div>
+      <div class="app-frame" role="img" aria-label="Permission changes on the Finance Contracts site since the last scan, with a fix due in 5 days">
+        <div class="app-bar"><i></i><i></i><i></i><span>Changes since last scan</span></div>
+        <div class="app-main" aria-hidden="true">
+          <div class="site-line">
+            <div><span class="k">Site</span><b>Finance Contracts</b></div>
+            <span class="due">Fix due in 5 days</span>
+          </div>
+          <div class="owners">
+            <div><span class="k">Business owner</span><b>Head of Finance</b></div>
+            <div><span class="k">Technical owner</span><b>IT, Collaboration team</b></div>
+          </div>
+          <div class="rows diff">
+            <div class="row add"><span>Everyone except external users</span><span>Read access granted</span><span class="sev crit">Critical</span></div>
+            <div class="row add"><span>2 guests</span><span>Added to Members</span><span class="sev high">High</span></div>
+            <div class="row add"><span>Anyone link</span><span>Created on 3 files</span><span class="sev high">High</span></div>
+            <div class="row del"><span>Second owner</span><span>Removed, account disabled</span><span class="sev med">Medium</span></div>
+          </div>
+          <div class="exc"><span class="k">Exception</span><span>Anyone links on the Price list folder, approved by the Head of Finance until 31 March</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Power Platform and agents on standard licences -->
+  <section class="sec" id="power-platform">
+    <div class="wrap split">
+      <div>
+        <h2>Power Apps, flows and agents in the same view</h2>
+        <p class="sub">One nightly flow reads the Power Platform inventory with the standard Power Platform for Admins connector. It needs no premium licence.</p>
+        <ul class="ticks">
+          <li>Every app, cloud flow and Copilot Studio or Agent Builder agent</li>
+          <li>Owners who have left, and items with a single owner</li>
+          <li>Apps and flows unused for 90 days, and flows that keep failing</li>
+          <li>Apps shared with the whole organisation, and business apps in the default environment</li>
+          <li>The connectors each item uses, checked against your data policies</li>
+        </ul>
+      </div>
+      <div class="app-frame" role="img" aria-label="Inventory view with an app, a flow and two agents, each with its owner and a finding">
+        <div class="app-bar"><i></i><i></i><i></i><span>Governance Monitor, Power Platform</span></div>
+        <div class="app-main" aria-hidden="true">
+          <div class="tiles">
+            <div><span class="k">Apps</span><b>186</b></div>
+            <div><span class="k">Flows</span><b>412</b></div>
+            <div><span class="k">Agents</span><b>37</b></div>
+            <div><span class="k">Owner left</span><b>19</b></div>
+          </div>
+          <div class="rows">
+            <div class="row head"><span>Item</span><span>Finding</span><span>Severity</span></div>
+            <div class="row"><span><em class="type">App</em>Expense Claims</span><span>Shared with everyone, default environment</span><span class="sev high">High</span></div>
+            <div class="row"><span><em class="type">Flow</em>Invoice to Dropbox</span><span>Sends files to a personal service</span><span class="sev crit">Critical</span></div>
+            <div class="row"><span><em class="type">Agent</em>HR Policy Helper</span><span>Owner account disabled</span><span class="sev high">High</span></div>
+            <div class="row"><span><em class="type">Agent</em>Sales Q&amp;A</span><span>No use for 120 days</span><span class="sev med">Medium</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reports, trends, readiness, evidence -->
+  <section class="sec" id="reports">
+    <div class="wrap split">
+      <div>
+        <h2>Reports for management and auditors</h2>
+        <p class="sub">The monitor keeps the history, so you can show progress and prove reviews happened.</p>
+        <ul class="mini">
+          <li><h3>Sends a monthly management report</h3><p>Score, top risks and overdue fixes as a PDF and an email. No Power BI licence.</p></li>
+          <li><h3>Keeps a risk trend</h3><p>Tenant and area scores every day, and each site's score every month.</p></li>
+          <li><h3>Measures Copilot readiness</h3><p>Your self-check answers next to what the scan measured.</p></li>
+          <li><h3>Keeps review evidence</h3><p>Each month's reviews and fixes saved to a locked library with a retention label.</p></li>
+        </ul>
+      </div>
+      <div class="app-frame" role="img" aria-label="Monthly report with a tenant score trend rising from 48 to 71 over twelve months, and Copilot readiness of 78 percent answered against 54 percent measured">
+        <div class="app-bar"><i></i><i></i><i></i><span>Monthly governance report</span></div>
+        <div class="app-main" aria-hidden="true">
+          <div class="score-row">
+            <div><span class="k">Tenant health, 12 months</span><span class="score">71<small>/100</small></span></div>
+            <span class="trend">+23 since last year</span>
+          </div>
+          <div class="chart">
+            <span class="gm-s2"></span><span class="gm-s13"></span><span class="gm-s14"></span><span class="gm-s15"></span><span class="gm-s4"></span><span class="gm-s5"></span><span class="gm-s16"></span><span class="gm-s17"></span><span class="gm-s6"></span><span class="gm-s18"></span><span class="gm-s19"></span><span class="gm-s20"></span>
+          </div>
+          <div class="ready">
+            <span class="k">Copilot readiness</span>
+            <div class="rbar"><span>Self-check answers</span><i class="gm-s21"></i><b>78%</b></div>
+            <div class="rbar"><span>Measured by the scan</span><i class="gm-s22"></i><b>54%</b></div>
+          </div>
+          <div class="evid"><span class="k">Review evidence</span><span>October reviews: 212 of 230 answered, PDF saved to the Governance records library</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium governance -->
+  <section class="sec" id="premium">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>More controls with premium licences</h2>
+        <p>Everything above works on standard Microsoft 365 licences. If your tenant has premium licences, the monitor also uses the governance features that come with them.</p>
+      </div>
+      <div class="compare" role="table" aria-label="What the monitor does on standard and on premium licences">
+        <div class="crow chead" role="row"><span role="columnheader">Feature</span><span role="columnheader">Standard</span><span role="columnheader">Premium</span></div>
+        <div class="crow" role="row"><span role="cell">SharePoint, Power Platform and agent checks, owner reviews, deadlines, exceptions, change tracking, PDF reports and review evidence</span><span role="cell" class="yes">Included</span><span role="cell" class="yes">Included</span></div>
+        <div class="crow" role="row"><span role="cell">Sharing limits, weekly usage insights, solution checker and IP firewall per environment<small>Managed Environments, with Power Apps, Power Automate or Copilot Studio licences</small></span><span role="cell" class="no">Not available</span><span role="cell" class="yes">Included</span></div>
+        <div class="crow" role="row"><span role="cell">Agents built outside Power Platform: Teams, SharePoint, Foundry and others<small>Microsoft Graph agent APIs, with an Agent 365 licence</small></span><span role="cell" class="no">Not available</span><span role="cell" class="yes">Included</span></div>
+        <div class="crow" role="row"><span role="cell">SharePoint Advanced Management oversharing reports<small>With at least one Microsoft 365 Copilot licence in the tenant</small></span><span role="cell" class="no">Not available</span><span role="cell" class="yes">Included</span></div>
+        <div class="crow" role="row"><span role="cell">Automatic fixes through Microsoft Graph and history kept in Dataverse<small>Power Automate Premium for the monitor's service account only</small></span><span role="cell" class="no">Not available</span><span role="cell" class="yes">Included</span></div>
+        <div class="crow" role="row"><span role="cell">Who changed a permission, from the Purview audit log<small>An app registration and the premium HTTP connector</small></span><span role="cell" class="no">Not available</span><span role="cell" class="yes">Included</span></div>
+        <div class="crow" role="row"><span role="cell">Management reports in Power BI<small>Power BI Pro for everyone who opens them</small></span><span role="cell" class="no">Not available</span><span role="cell" class="yes">Included</span></div>
+        <div class="crow" role="row"><span role="cell">Fix tickets in ServiceNow or Jira<small>Premium connectors for the service account</small></span><span role="cell" class="no">Not available</span><span role="cell" class="yes">Included</span></div>
+      </div>
+      <p class="note">In a Managed Environment, everyone who uses its apps and flows needs a premium licence, so the monitor tells you which environments qualify before you switch it on.</p>
+    </div>
+  </section>
+
+  <!-- Data and security -->
+  <section class="sec" id="data">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Your data stays in your tenant</h2>
+        <p>The monitor is a package you install, not a service you sign up for. Nothing leaves Microsoft 365.</p>
+      </div>
+      <ul class="cards three">
+        <li class="card"><h3>Results in your SharePoint lists</h3><p>Sites, findings and reviews live on a governance site that you own and control.</p></li>
+        <li class="card"><h3>One protected service account</h3><p>Flows run as one SharePoint Administrator account, with MFA and conditional access.</p></li>
+        <li class="card"><h3>Install in one script</h3><p>A PnP PowerShell script creates the site, lists, pages and flows in about 15 minutes.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Close -->
+  <section class="sec close" id="pilot">
+    <div class="wrap">
+      <h2>Pilot places for the first tenants</h2>
+      <p>We are looking for organisations with 200 to 5,000 users to run the monitor while we build it and tell us what is missing.</p>
+      <a class="btn btn-solid btn-lg" href="mailto:vitalijus@opusmeum.net?subject=Governance%20Monitor%20pilot">Request pilot access</a>
+    </div>
+  </section>
+
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <span>Opus Meum, Microsoft Power Platform and AI consultancy</span>
+    <span><a href="/#projects">All projects</a> &nbsp; <a href="https://vitmonko.github.io/opusmeum.ai/checks/">Self-checks</a> &nbsp; <a href="/">opusmeum.net</a> &nbsp; <a href="mailto:vitalijus@opusmeum.net">vitalijus@opusmeum.net</a></span>
+  </div>
+</footer>
+</body>
+</html>

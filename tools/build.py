@@ -368,6 +368,13 @@ def build():
               f"<description>{e(t['archive_intro'])}</description><language>{lang}</language>"
               f"{rss_items}</channel></rss>\n")
 
+    # Static project pages (projects/<name>/index.html) go into the sitemap too.
+    projects_dir = os.path.join(ROOT, "projects")
+    if os.path.isdir(projects_dir):
+        for name in sorted(os.listdir(projects_dir)):
+            if os.path.isfile(os.path.join(projects_dir, name, "index.html")):
+                sitemap.append((f"/projects/{name}/", today))
+
     # Cache busting: GitHub Pages lets browsers cache CSS/JS for ~10 minutes, so a new
     # page could load with an old stylesheet. Stamp each link with a content hash.
     import hashlib

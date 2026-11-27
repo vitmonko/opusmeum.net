@@ -144,6 +144,21 @@ T = [
  ('<a class="btn btn-line" href="https://vitmonko.github.io/opusmeum.ai/copilot-readiness/">Check your Copilot readiness</a>',
   '<a class="btn btn-line" href="https://vitmonko.github.io/opusmeum.ai/lt/copilot-readiness/">Patikrinkite pasirengimą Copilot</a>',
   '<a class="btn btn-line" href="https://vitmonko.github.io/opusmeum.ai/de/copilot-readiness/">Copilot-Bereitschaft prüfen</a>'),
+ ('<a href="#projects">Projects</a>', '<a href="#projects">Projektai</a>', '<a href="#projects">Projekte</a>'),
+ ('<h2>Ongoing projects</h2>', '<h2>Vykdomi projektai</h2>', '<h2>Laufende Projekte</h2>'),
+ ('Products we are building from our consulting work. Each one runs inside your own Microsoft 365.',
+  'Produktai, kuriuos kuriame remdamiesi savo konsultavimo darbu. Kiekvienas veikia jūsų pačių Microsoft 365 aplinkoje.',
+  'Produkte, die wir aus unserer Beratungsarbeit heraus entwickeln. Jedes läuft in Ihrem eigenen Microsoft 365.'),
+ ('In development, pilot tenants wanted', 'Kuriama, ieškome bandomųjų organizacijų', 'In Entwicklung, Pilotkunden gesucht'),
+ ('A governance monitor for SharePoint, Power Apps, Power Automate and Copilot agents. It finds ownerless, inactive and overshared sites, apps, flows and agents every night, asks owners what they still need, and runs on the Microsoft 365 licences you already have.',
+  'Valdysenos stebėsenos įrankis SharePoint, Power Apps, Power Automate ir Copilot agentams. Kiekvieną naktį jis randa svetaines, programėles, srautus ir agentus be savininkų, neaktyvius ar per plačiai pasidalintus, klausia savininkų, ko jiems dar reikia, ir veikia su jau turimomis Microsoft 365 licencijomis.',
+  'Ein Governance-Monitor für SharePoint, Power Apps, Power Automate und Copilot-Agenten. Er findet jede Nacht Websites, Apps, Flows und Agenten ohne Besitzer, inaktive oder zu weit geteilte, fragt die Besitzer, was sie noch brauchen, und läuft mit den Microsoft-365-Lizenzen, die Sie bereits haben.'),
+ ('<li>17 SharePoint checks in six areas</li>', '<li>17 SharePoint patikrų šešiose srityse</li>', '<li>17 SharePoint-Prüfungen in sechs Bereichen</li>'),
+ ('<li>Owner reviews in Teams, with deadlines and exceptions</li>', '<li>Savininkų peržiūros Teams, su terminais ir išimtimis</li>', '<li>Besitzer-Reviews in Teams, mit Fristen und Ausnahmen</li>'),
+ ('<li>Monthly reports for management and auditors</li>', '<li>Mėnesio ataskaitos vadovams ir auditoriams</li>', '<li>Monatliche Berichte für Geschäftsleitung und Prüfer</li>'),
+ ('<li>Your data stays in your tenant</li>', '<li>Jūsų duomenys lieka jūsų aplinkoje</li>', '<li>Ihre Daten bleiben in Ihrem Tenant</li>'),
+ ('>Read about the Governance Monitor</a>', '>Daugiau apie Governance Monitor (anglų k.)</a>', '>Mehr zum Governance Monitor (auf Englisch)</a>'),
+ ('>Request pilot access</a>', '>Prašyti bandomosios prieigos</a>', '>Pilotzugang anfragen</a>'),
 ]
 missing = [e for e,_,_ in T if e not in src]
 if missing:
